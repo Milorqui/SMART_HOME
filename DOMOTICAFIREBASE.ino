@@ -1,6 +1,8 @@
-/* 
- https://arduino.esp8266.com/stable/package_esp8266com_index.json
- */
+//EL ENLACE DE DEBAJO ES PARA AÑADIR LA ESP8266 AL IDE DE ARDUINO
+
+//https://arduino.esp8266.com/stable/package_esp8266com_index.json
+
+//LA VERSION DE LA ESP8266 DEBE SER LA 2.7 PARA QUE FUNCIONE CON LA LIBRERIA DE FIREBASE
 
 #include <ESP8266WiFi.h> 
 #include <FirebaseESP8266.h>
@@ -12,7 +14,8 @@
 
 FirebaseData firebaseData;
 
-// define the GPIO connected with Relays and switches
+// DEFINIMOS LOS GPIO A UTILIZAR COMO SWITCH O RELAY
+
 #define Relay1  D0 //GPIO 16
 #define Relay2  D1 //GPIO 5
 #define Relay3  D2 //GPIO 4
@@ -50,12 +53,11 @@ delay(100);
 void loop() {
   
 if (WiFi.status() != WL_CONNECTED){ 
-    //Serial.println("WiFi Not Connected");
-    digitalWrite(wifiLed, HIGH); //Turn off WiFi LED
+    digitalWrite(wifiLed, HIGH); 
   }
   else{ 
     //Serial.println("WiFi Connected");
-    digitalWrite(wifiLed, LOW); //Turn on WiFi LED
+    digitalWrite(wifiLed, LOW); 
 }
   
 Switch_Read();
